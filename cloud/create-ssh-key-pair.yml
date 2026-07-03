@@ -15,7 +15,7 @@
     - name: Save private key to file
       copy:
         content: "{{ create_key.key.private_key }}"
-        dest: /path/to/aws-demo-gameday-key.pem
+        dest: '~/aws-demo-gameday-key.pem'
         mode: '0600'
       when: create_key.changed
 
@@ -30,4 +30,4 @@
         controller_host: "{{ controller_host | default('https://localhost/') }}"
         validate_certs: false
         inputs:
-          ssh_key_data: "{{ lookup('file', '/path/to/aws-demo-gameday-key.pem') }}"
+          ssh_key_data: "{{ lookup('file', '~/aws-demo-gameday-key.pem') }}"
