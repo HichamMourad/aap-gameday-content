@@ -15,7 +15,7 @@
     - name: Save private key to file
       copy:
         content: "{{ create_key.key.private_key }}"
-        dest: '~/aws-demo-gameday-key.pem'
+        dest: 'aws-demo-gameday-key.pem'
         mode: '0600'
       when: create_key.changed
 
@@ -26,4 +26,4 @@
         credential_type: Machine
         state: present
         inputs:
-          ssh_key_data: "{{ lookup('file', '~/aws-demo-gameday-key.pem') }}"
+          ssh_key_data: "{{ lookup('file', 'aws-demo-gameday-key.pem') }}"
