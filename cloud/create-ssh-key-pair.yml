@@ -30,4 +30,3 @@
         validate_certs: false
         inputs:
           ssh_key_data: "{{ lookup('file', '/path/to/aws-demo-gameday-key.pem') }}"
-      when: create_key.changed
