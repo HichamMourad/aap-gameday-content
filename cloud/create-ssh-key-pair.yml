@@ -11,7 +11,14 @@
         name: "aws-demo-gameday-key"
       register: create_key
 #
-    - name: Update SSH key with latest
+    - name: Save private key to file
+      copy:
+        content: "{{ create_key.key.private_key }}"
+        dest: /path/to/aws-demo-gameday-key.pem
+        mode: '0600'
+      when: create_key.changed
+
+    - name: Create the Machine Credential that will use SSH
       ansible.controller.credential:
         name: AWS gameday Demo Instance SSH credential
         organization: Default
@@ -22,5 +29,5 @@
         controller_host: "{{ controller_host | default('https://localhost/') }}"
         validate_certs: false
         inputs:
-          ssh_key_data: "{{ create_key.key.private_key }}"
+          ssh_key_data: "{{ lookup('file', '/path/to/aws-demo-gameday-key.pem') }}"
       when: create_key.changed
