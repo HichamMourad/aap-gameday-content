@@ -13,7 +13,7 @@
 #
     - name: Update SSH key with latest
       ansible.controller.credential:
-        name: AWS gameday Demo Instance Key
+        name: AWS gameday Demo Instance SSH credential
         organization: Default
         credential_type: Machine
         state: present
