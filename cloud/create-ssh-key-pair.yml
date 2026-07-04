@@ -28,3 +28,4 @@
           username: ec2-user
           ssh_key_data: "{{ lookup('file', 'aws-demo-gameday-key.pem') }}"
         validate_certs: false
+        request_timeout: 10
