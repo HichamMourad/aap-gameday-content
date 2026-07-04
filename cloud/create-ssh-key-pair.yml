@@ -27,4 +27,3 @@
         state: present
         inputs:
           ssh_key_data: "{{ lookup('file', 'aws-demo-gameday-key.pem') }}"
-      delegate_to: localhost
