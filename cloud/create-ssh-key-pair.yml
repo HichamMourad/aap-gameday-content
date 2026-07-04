@@ -13,7 +13,7 @@
       register: create_key
 #
     - name: Save private key to file
-      copy:
+      ansible.builtin.copy:
         content: "{{ create_key.key.private_key }}"
         dest: 'aws-demo-gameday-key.pem'
         mode: '0600'
@@ -21,6 +21,7 @@
 
     - name: Create the Machine Credential that will use SSH
       ansible.controller.credential:
+      delegate_to: localhost
         name: AWS gameday Demo Instance SSH credential
         organization: Default
         credential_type: Machine
