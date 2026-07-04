@@ -27,3 +27,4 @@
         state: present
         inputs:
           ssh_key_data: "{{ lookup('file', 'aws-demo-gameday-key.pem') }}"
+        validate_certs: false
