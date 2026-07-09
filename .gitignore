@@ -67,3 +67,5 @@ ansible.cfg
 **/.vscode
 **/.devcontainer
 **/devcontainer.json
+.vscode/
+.cursor/
