@@ -1,6 +1,3 @@
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![Dev Spaces](https://img.shields.io/badge/Customize%20Here-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://workspaces.openshift.com/f?url=https://github.com/ansible/product-demos)
-
 # APD - Ansible Product Demos
 
 The Ansible Product Demos (APD) project is a set of Ansible demos that run on the [Red Hat Ansible Automation Platform](https://www.redhat.com/en/technologies/management/ansible) (AAP).  These demos are deployed using configuraton-as-code and playbooks that create AAP resources (such as projects, templates, and credentials) meant for demonstrating automation use cases in several technology domains:
