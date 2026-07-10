@@ -52,7 +52,7 @@
 
 - name: print variables
   debug:
-    var: hostvars['ansible-1']
+    var: hostvars['reports']
 
 - name: retrieve public IP address
   ansible.builtin.command: curl https://ifconfig.me
@@ -63,4 +63,5 @@
   debug:
     msg:
       - "Please go to http://{{ public_ip_report.stdout | default(ansible_fqdn) }}:{{ web_port }}"
+      - "Please go to http://{{ hostvars[report_server]['ansible_host'] }"
 
