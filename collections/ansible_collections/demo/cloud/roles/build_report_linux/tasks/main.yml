@@ -62,6 +62,4 @@
 - name: display link to inventory report
   debug:
     msg:
-      - "Please go to http://{{ public_ip_report.stdout | default(ansible_fqdn) }}:{{ web_port }}"
-      - "Please go to http://{{ hostvars[report_server]['ansible_host'] }"
-
+      - "Please go to http://{{ public_ip_report.stdout | default(ansible_fqdn) }}"
