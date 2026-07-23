@@ -40,7 +40,7 @@
   mq_user:
     broker_id: "{{ broker_id }}"
     username: "{{ usernames[2] }}"
-    password: "09234092jzxkjvjk23kn23qn5lk34"
+    password: "blahblahblahblahblah"
   register: result
 - name: test3 - verify
   assert:
